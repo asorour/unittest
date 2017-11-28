@@ -94,7 +94,7 @@ public class DepositAndWithdrawAccountTest {
 	public void nameChangeWorksIfAuditorApprovesOfProposedNameChange() {
 		// given   - the account holder needs to exist and return true when the SUT calls its isActive() method.
 		double openingBalance = 9000.00;
-		Account sut = new Account("Freda",openingBalance);
+		Account sut = new Account("Maya",openingBalance);
 		AccountHolder dummyAccountHolder = mock(AccountHolder.class);
 		sut.setAccountHolder(dummyAccountHolder);
 		Auditor dummyAuditor = mock(Auditor.class);
@@ -105,9 +105,9 @@ public class DepositAndWithdrawAccountTest {
 		when(dummyAuditor.proposedNameChangeIsOK(anyString())).thenReturn(true);
 		
 		// when 
-		sut.changeName("Lauren");
+		sut.changeName("Sharon");
 		// then
-		assertEquals("Lauren", sut.getName());
+		assertEquals("Sharon", sut.getName());
 	}
 	
 
@@ -115,7 +115,7 @@ public class DepositAndWithdrawAccountTest {
 	public void nameChangeDoesNotWorkIfAuditorDoesnNotApproveOfProposedNameChange() {
 		// given   - the account holder needs to exist and return true when the SUT calls its isActive() method.
 		double openingBalance = 9000.00;
-		Account sut = new Account("Freda",openingBalance);
+		Account sut = new Account("Jose",openingBalance);
 		AccountHolder dummyAccountHolder = mock(AccountHolder.class);
 		sut.setAccountHolder(dummyAccountHolder);
 		Auditor dummyAuditor = mock(Auditor.class);
@@ -125,9 +125,9 @@ public class DepositAndWithdrawAccountTest {
 		// which is to return false from any method with a boolean return,
 		// just as we get back zero from a method that returns a number
 		// when 
-		sut.changeName("Lauren");
+		sut.changeName("Sarah");
 		// then
-		assertEquals("Freda", sut.getName());
+		assertEquals("Jose", sut.getName());
 	}
 	
 	
