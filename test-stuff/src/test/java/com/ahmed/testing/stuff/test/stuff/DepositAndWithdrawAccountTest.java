@@ -75,7 +75,7 @@ public class DepositAndWithdrawAccountTest {
 	public void auditorReceivesTransactionReportsFor3TransactionsWhenAuditingIsEnabled() {
 		// given   - the account holder needs to exist and return true when the SUT calls its isActive() method.
 		double openingBalance = 9000.00;
-		Account sut = new Account("Freda",openingBalance);
+		Account sut = new Account("Nina",openingBalance);
 		AccountHolder dummyAccountHolder = mock(AccountHolder.class);
 		sut.setAccountHolder(dummyAccountHolder);
 		Auditor dummyAuditor = mock(Auditor.class);
