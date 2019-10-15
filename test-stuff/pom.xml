@@ -28,4 +28,13 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.4.10</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>
